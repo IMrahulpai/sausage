@@ -1,7 +1,7 @@
 <?php
 namespace Sauce\Sausage;
 
-abstract class WebDriverTestCase extends \PHPUnit_Extensions_Selenium2TestCase
+abstract class WebDriverTestCase extends \PHPUnit\Extensions\Selenium2TestCase
 {
     use TestCase;
 }
