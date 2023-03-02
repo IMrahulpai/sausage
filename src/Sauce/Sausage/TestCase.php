@@ -95,14 +95,14 @@ trait TestCase
         $this->setUpSessionStrategy($params);
     }
 
-    public function isTextPresent($text, \PHPUnit_Extensions_Selenium2TestCase_Element $element = NULL)
+    public function isTextPresent($text, \PHPUnit\Extensions\Selenium2TestCase\Element $element = NULL)
     {
         $element = $element ?: $this->byCssSelector('body');
         $el_text = str_replace("\n", " ", $element->text());
         return strpos($el_text, $text) !== false;
     }
 
-    public function waitForText($text, \PHPUnit_Extensions_Selenium2TestCase_Element $element = NULL,
+    public function waitForText($text, \PHPUnit\Extensions\Selenium2TestCase\Element $element = NULL,
         $timeout = 10)
     {
         $test = function() use ($element, $text) {
@@ -114,7 +114,7 @@ trait TestCase
     }
 
 
-    public function assertTextPresent($text, \PHPUnit_Extensions_Selenium2TestCase_Element $element = NULL)
+    public function assertTextPresent($text, \PHPUnit\Extensions\Selenium2TestCase\Element $element = NULL)
     {
         $this->spinAssert("$text was never found", function() use ($text, $element) {
             $el_text = $element ? $element->text() : $this->byCssSelector('body')->text();
@@ -122,7 +122,7 @@ trait TestCase
         });
     }
 
-    public function assertTextNotPresent($text, \PHPUnit_Extensions_Selenium2TestCase_Element $element = NULL)
+    public function assertTextNotPresent($text, \PHPUnit\Extensions\Selenium2TestCase\Element $element = NULL)
     {
         $this->spinAssert("$text was found", function() use ($text, $element) {
             $el_text = $element ? $element->text() : $this->byCssSelector('body')->text();
@@ -140,7 +140,7 @@ trait TestCase
         $this->fileDetectorFunction = $fileDetectorFunction;
     }
 
-    public function sendKeys(\PHPUnit_Extensions_Selenium2TestCase_Element $element, $keys)
+    public function sendKeys(\PHPUnit\Extensions\Selenium2TestCase\Element $element, $keys)
     {
         if($this->fileDetectorFunction &&
             call_user_func($this->fileDetectorFunction, $keys)) {
