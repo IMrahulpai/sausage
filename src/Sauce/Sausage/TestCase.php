@@ -18,7 +18,7 @@ trait TestCase
         return parent::suite($className);
     }
 
-    public function setUp()
+    public function setUp(): void
     {
         $caps = $this->getDesiredCapabilities();
         $this->setBrowserUrl('');
