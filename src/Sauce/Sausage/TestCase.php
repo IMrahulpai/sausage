@@ -209,7 +209,7 @@ trait TestCase
         return "https://saucelabs.com/jobs/".$job_id."?auth=".$auth_token;
     }
 
-    public function toString()
+    public function toString(): string
     {
         if(!$this->is_local_test && $this->hasFailed())
             return parent::toString()."\nReport link: ".$this->createNoLoginLink()."\n";
