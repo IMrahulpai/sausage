@@ -152,7 +152,7 @@ trait TestCase
         }
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         if (!$this->is_local_test) {
             SauceTestCommon::ReportStatus($this->getSessionId(), !$this->hasFailed());
