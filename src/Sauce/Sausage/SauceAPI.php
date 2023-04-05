@@ -7,7 +7,7 @@ class SauceAPI
     protected $username;
     protected $access_key;
 
-    public function __construct($username, $access_key, $verify_certs = true, $use_european_host = false)
+    public function __construct($username, $access_key, $verify_certs = false, $use_european_host = false)
     {
         if (!$username) {
             throw new \Exception("Username is required for SauceAPI");
