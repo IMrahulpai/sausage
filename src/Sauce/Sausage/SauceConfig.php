@@ -52,7 +52,7 @@ EOF;
 
             define('SAUCE_USERNAME', $username);
             define('SAUCE_ACCESS_KEY', $access_key);
-            define('SAUCE_HOST', $sauce_host);
+            if(!defined('SAUCE_HOST')) define('SAUCE_HOST', $sauce_host);
         }
         $build_envs = array(
             'SAUCE_BUILD',

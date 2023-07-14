@@ -25,7 +25,7 @@ class SauceAPI
             $sauce_host = 'eu-central-1.saucelabs.com';
         }
 
-        define('SAUCE_HOST', $sauce_host);
+        if (!defined('SAUCE_HOST')) define('SAUCE_HOST', $sauce_host);
     }
 
 
